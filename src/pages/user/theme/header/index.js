@@ -1,9 +1,19 @@
 import { memo } from "react";
+import { useState } from "react";
 
-const Header = () => {
+const Header = ({openLogin}) => {
+    //Trang thai dang nhap
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    // const toggleLogin = () => {
+    //     setIsLoggedIn(!isLoggedIn);
+    // };
+
+
     return(
-        <header className="nav-bar">
-            isLoggedIn ? (
+        <header className="nav-bar" >
+        {isLoggedIn ? (
+            <>
             <div className="nav-1">
                 <img  className="logo-img" src={`${process.env.PUBLIC_URL}/images/header/Love&Link.png`} alt="Love&Link" />
             </div>
@@ -22,15 +32,23 @@ const Header = () => {
                 </div>
             </div>
             <div className="nav-3">
-                <img className="avatar-img" src={`${process.env.PUBLIC_URL}/images/header/avatar.jpg`}/>
+                <img className="avatar-img" src={`${process.env.PUBLIC_URL}/images/header/avatar.jpg`} alt="avatar" />
             </div>
+            </>
             ) : (
+                <>
                 <div className="nav-1">
                     <img  className="logo-img" src={`${process.env.PUBLIC_URL}/images/header/Love&Link.png`} alt="Love&Link" />
                 </div>
-            );
+                <div className="sign-in">
+                    <span className="subtitle">Bạn đã có tài khoản?</span>
+                    <button className="sign-in-button" onClick={openLogin}>Đăng nhập</button>
+                </div>
+                </>
+            )
+        }
         </header>
     )
-}
+};
 
 export default memo(Header);

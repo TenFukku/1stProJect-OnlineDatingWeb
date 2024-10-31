@@ -61,4 +61,20 @@ body{
             cursor: pointer;
         }
     }
+    .sign-in{
+        .subtitle{
+            color: #3F2B2E;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+        .sign-in-button{
+            height: 45px;
+            width: 150px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #F48CA7 28.67%, rgba(244, 140, 167, 0.40) 100%);
+            font-size: 20px;
+            color: white;
+        }
+    }
 }

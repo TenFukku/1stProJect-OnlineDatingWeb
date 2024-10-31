@@ -8,10 +8,6 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.HOME,
             component: <HomePage />
-        },
-        {
-            path: ROUTERS.USER.LOGIN,
-            component: <Login />
         }
     ]
     return(
